@@ -10,7 +10,7 @@ This is PHP wrapper/library for veritrans Air-Direct API.
 
 ```
 {
-    "require":{
+    "require": {
         "yumaeda/veritrans": "1.0.*"
     }
 }
@@ -24,20 +24,20 @@ This is PHP wrapper/library for veritrans Air-Direct API.
 use Yumaeda\Payment\Veritrans\Veritrans;
 use Yumaeda\Payment\Veritrans\CreditCard;
 
-$order_id='#0123456789';
-$total=99999;
-$client_key='<ClientKey>';
-$server_key='<ServerKey>';
-$card_number='<CardNumber>';
-$expire_month='09';
-$expire_year='2022';
-$cvv='0000';
+$order_id     = <Order ID>;     // Unique order ID for your veritrans
+$client_key   = <ClientKey>;    // Your veritrans client key
+$server_key   = <ServerKey>;    // Your veritrans server key
+$total        = <Total in JPY>; // e.g. 9999
+$card_number  = <CardNumber>;   // e.g. '111111111111111'
+$cvv          = <CVV>;          // e.g. '1234'
+$expire_month = <Exp Month>;    // e.g. 9
+$expire_year  = <Exp Year>;     // e.g. 2022
 
-$veritrans=newVeritrans($client_key,$server_key);
-$credit_card=newCreditCard($card_number,$expire_month,$expire_year,$cvv);
+$veritrans = new Veritrans($client_key, $server_key);
+$credit_card = new CreditCard($card_number, $expire_month, $expire_year, $cvv);
 
 $veritrans->setCreditCard($credit_card);
-$veritrans->charge($order_id,$total,true);
+$veritrans->charge($order_id, $total, true);
 ```
 
 ## Testing
