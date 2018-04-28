@@ -5,7 +5,7 @@ This is PHP wrapper/library for veritrans Air-Direct API.
 * Please do not ask any questions about this API to [veritrans](https://www.veritrans.co.jp/).
 * The author shall not be held responsible or liable, under any circumstances, for any damages resulting from using this component.
 
-# Installation
+## Installation
 1. Add this require line to your `composer.json`:
 
 ```
@@ -17,7 +17,7 @@ This is PHP wrapper/library for veritrans Air-Direct API.
 ```
 2. `composer install` on your terminal.
 
-# How to Use
+## How to Use
 
 ```
 <?php
@@ -40,17 +40,17 @@ $veritrans->setCreditCard($credit_card);
 $veritrans->charge($order_id,$total,true);
 ```
 
-# Testing
+## Testing
 Not available
 
-# Contributing
+## Contributing
 Please send a pull request.
 
-# Support
+## Support
 Please send an email to yumaeda@gmail.com.
 
-# Author
+## Author
 Yukitaka Maeda
 
-# Software License
+## Software License
 MIT
