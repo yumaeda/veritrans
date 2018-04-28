@@ -22,7 +22,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Yumaeda\\Payment\\": "src/"
+            "Yumaeda\\Payment\\": "vendor/yumaeda/veritrans/src/"
         }
     }
 }
