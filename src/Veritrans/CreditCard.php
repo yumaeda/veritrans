@@ -15,22 +15,22 @@ class CreditCard
     /**
      * @var string $card_number Contains credit card number
      */
-    private $card_number;
+    public $card_number;
 
     /**
      * @var string $exp_month Contains expiration month for credit card
      */
-    private $exp_month;
+    public $exp_month;
 
     /**
      * @var string $exp_year Contains expiration year for credit card
      */
-    private $exp_year;
+    public $exp_year;
 
     /**
      * @var string $cvv Contains CVV for credit card
      */
-    private $cvv;
+    public $cvv;
 
     /**
      * Constructor
@@ -42,7 +42,7 @@ class CreditCard
      * @var string $cvv CVV for credit card
      * @return void
      */
-    public function __construct(string $card_number, int $exp_month, int $exp_year, string $cvv)
+    public function __construct($card_number, $exp_month, $exp_year, $cvv)
     {
         $this->card_number = $card_number;
         $this->exp_month = substr('0' . $exp_month, -2);

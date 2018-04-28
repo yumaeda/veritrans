@@ -65,7 +65,7 @@ class Veritrans
      * @param  string $server_key Server key for veritrans API
      * @return void
      */
-    public function __construct(string $client_key, string $server_key)
+    public function __construct($client_key, $server_key)
     {
         $this->client_key = $client_key;
         $this->server_key = $server_key;
@@ -78,7 +78,7 @@ class Veritrans
      * @param CreditCard $credit_card Credit card info
      * @return void
      */
-    public function setCreditCard(CreditCard $credit_card)
+    public function setCreditCard($credit_card)
     {
         $this->credit_card = $credit_card;
     }
@@ -92,14 +92,9 @@ class Veritrans
      * @param  bool $with_capture Flag for making payment transaction with capture or not
      * @return mixed Payment transaction result
      */
-    public function charge(string $order_id, int $total_amount, bool $with_capture)
+    public function charge($order_id, $total_amount, $with_capture)
     {
-        $response = $this->getTokenId(
-            $this->credit_card->card_number,
-            $this->credit_card->exp_month,
-            $this->credit_card->exp_year,
-            $this->credit_card->cvv
-        );
+        $response = $this->getTokenId();
 
         if (($response === false) || ($response->status !== 'success'))
         {
@@ -166,7 +161,7 @@ class Veritrans
      * @throws \Exception
      * @return mixed Result of the POST request
      */
-    private function post(string $uri, string $data, string $post_header = null)
+    private function post($uri, $data, $post_header = null)
     {
         $param = [
             'http' => [
